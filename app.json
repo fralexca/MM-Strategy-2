@@ -4,30 +4,10 @@
   "repository": "https://heroku.com/deploy?template=https://github.com/jimerictibayan2012-netflix/MM-Strategy-2/tree/master",
   "logo": "https://node-js-sample.herokuapp.com/node.png",
   "keywords": ["python", "binance", "Trading"]
-  "success_url": "/"
   "env": {
     "WEBHOOK_PASSPHRASE": {
       "description": "Passphrase Password for Tradingview Alerts",
       "value": "<Put the Passphrase Here>"
-    },
-    "API_KEY": {
-      "description": "Binance API Key",
-      "value": "<Put the Binance API Key Here>"
-    }
-
-    "API_SECRET": {
-      "description": "Binance API Secret",
-      "value": "<Put the Binance API Secret Here>"
-    }
-
-    "MAIL_USERNAME": {
-      "description": "Mailtrap.IO Python Username",
-      "value": "<Put the Mailtrap IO Username Here>"
-    }
-
-    "MAIL_PASSWORD": {
-      "description": "Mailtrap.IO Python Password",
-      "value": "<Put the Mailtrap IO Username Here>"
     }
   }
 }
