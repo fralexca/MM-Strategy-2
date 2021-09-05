@@ -1,0 +1,4 @@
+flask
+Flask-mail
+gunicorn
+python-binance
