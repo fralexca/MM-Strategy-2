@@ -1,3 +1,5 @@
+import os
+
 WEBHOOK_PASSPHRASE = os.environ.get("WEBHOOK_PASSPHRASE")
 
 API_KEY = os.environ.get("API_KEY")
