@@ -2,6 +2,4 @@
   "name": "MM Trading BOT",
   "description": "A BOT that will be use to allow Trading in Binance",
   "repository": "https://github.com/jimerictibayan2012-netflix/MM-Strategy-2",
-  "logo": "https://node-js-sample.herokuapp.com/node.png",
-  "keywords": ["node", "express", "static"]
 }
