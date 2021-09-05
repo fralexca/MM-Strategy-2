@@ -1,7 +1,7 @@
 {
   "name": "MM Trading BOT",
   "description": "A BOT that will be use to allow Trading in Binance",
-  "repository": "https://github.com/jimerictibayan2012-netflix/MM-Strategy-2",
+  "repository": "https://heroku.com/deploy?template=https://github.com/jimerictibayan2012-netflix/MM-Strategy-2/tree/master",
   "logo": "https://node-js-sample.herokuapp.com/node.png",
   "keywords": ["python", "binance", "Trading"]
 }
