@@ -1,4 +1,4 @@
-import json, config
+import json, config, os
 from re import sub
 from flask import Flask, request
 from flask_mail import Mail, Message
