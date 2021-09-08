@@ -11,8 +11,8 @@ app = Flask(__name__)
 
 client = Client(config.API_KEY, config.API_SECRET)
 
-client_db = MongoClient("mongodb+srv://jimerictibayan2012:Juliusaiden1@mmprotrader1.tqdyf.mongodb.net/test")
-app.db = client_db.TradingBot
+# client_db = MongoClient("mongodb+srv://jimerictibayan2012:Juliusaiden1@mmprotrader1.tqdyf.mongodb.net/test")
+# app.db = client_db.TradingBot
 
 
 
