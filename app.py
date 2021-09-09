@@ -562,8 +562,10 @@ def configuration():
                 if config.TEST_ACCOUNT != request.form["Account Balance"]:
                     os.environ["TEST_ACCOUNT"] = request.form["Account Balance"]
             
+        return render_template("config.html", a_risk=config.RISK, test=str(config.TEST))
+        
+    return render_template("config.html", a_risk=config.RISK, test=str(config.TEST))
 
-    return render_template("config.html", a_risk=config.RISK, test=config.TEST)
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
