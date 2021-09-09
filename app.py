@@ -531,7 +531,7 @@ def configuration():
         print (f"Risk is {config.RISK}")
         print (f"Trading Mode is {config.TEST}")
 
-        return render_template("config.html", a_risk=config.RISK, test=config.TEST)
+        return render_template("config.html", a_risk=config.RISK, test=int(config.TEST))
     
     elif request.method == "POST":
         if request.remote_addr == "127.0.0.1":
@@ -556,7 +556,7 @@ def configuration():
                 v_test = 2
 
             if config.TEST != v_test:
-                os.environ["TEST"] = v_test
+                os.environ["TEST"] = str(v_test)
 
             if v_test == 2:
                 if config.TEST_ACCOUNT != request.form["Account Balance"]:
