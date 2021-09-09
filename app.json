@@ -27,6 +27,18 @@
     "MAIL_PASSWORD": {
       "description": "Mailtrap.IO Python Password",
       "value": "<Put the Mailtrap IO Username Here>"
+    },
+    "RISK": {
+      "description": "Risk %. Currently set at 1%",
+      "value": "0.01"
+    },
+    "TEST": {
+      "description": "Mode of the BOT: 1 = Test Mode, 0 = Live Trading, 2 = Fixed Account Balance",
+      "value": "0.01"
+    },
+    "TEST_ACCOUNT": {
+      "description": "Used for Mode 2",
+      "value": "1000"
     }
   }
 }
