@@ -1,21 +1,13 @@
-import json, config, requests, os
+import json, config
 from re import sub
-from flask import Flask, request, render_template, redirect, url_for, jsonify
+from flask import Flask, request
 from flask_mail import Mail, Message
 from binance.client import Client
 from binance.enums import *
-#from pymongo import MongoClient
-
 
 app = Flask(__name__)
 
 client = Client(config.API_KEY, config.API_SECRET)
-
-# client_db = MongoClient("mongodb+srv://jimerictibayan2012:Juliusaiden1@mmprotrader1.tqdyf.mongodb.net/test")
-# app.db = client_db.TradingBot
-
-
-
 
 
 app.config['MAIL_SERVER']='smtp.mailtrap.io'
@@ -26,8 +18,6 @@ app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False
 
 mail = Mail(app)
-
-#Get the Config from the Database
 
 def order(side, quantity, symbol, order_type=ORDER_TYPE_MARKET):  #side = Buy or Sell 
     try:
@@ -487,84 +477,9 @@ def execute_loan(asset, to_borrow):
 
     return transaction
 
-@app.route("/", methods=["GET", "POST"])
-def home():
-    if request.method == "POST":
-        trade_option = request.form.get("Options")
-        passphrase = request.form.get("passphrase")
-        message = request.form.get("message")
-        ticker = request.form.get("coinpair")
-        entryprice = request.form.get("entryprice")
-        stopprice = request.form.get("stopprice")
-
-        # print(trade_option)
-        print(request.form)
-
-        data = {
-            "passphrase": passphrase,
-            "message":message,
-            "ticker":ticker,
-            "entryprice":float(entryprice),
-            "stopprice":float(stopprice),
-            "exchange":"BINANCE",
-            "timestamp":"12:00",
-            "origin":"TradingView"
-        }   
-
-        body = requests.post("http://127.0.0.1:5000/webhook", json=data)
-
-        output = body.json()
-
-        # print(output)
-
-        return render_template("index.html", body=output)
-
-    return render_template("index.html")
-
-@app.route("/config", methods=["GET", "POST"])
-def configuration():
-
-    print (request.remote_addr)
-    
-    if request.method == "GET":
-
-        print (f"Risk is {config.RISK}")
-        print (f"Trading Mode is {config.TEST}")
-
-        return render_template("config.html", a_risk=config.RISK, test=int(config.TEST))
-    
-    elif request.method == "POST":
-        if request.remote_addr == "127.0.0.1":
-            # if config.RISK != request.form["risk"]:
-            #     config.RISK = request.form["risk"]
-
-            # print(request.form.get("Options"))
-            print(request.form["Options"])
-
-        else: 
-            # request.form.get("message")
-            if config.RISK != request.form["risk"]:
-                os.environ["RISK"] = request.form["risk"]
-
-            if request.form["Options"] == "Test Mode":
-                v_test = 1
-
-            elif request.form["Options"] == "Dynamic Account Balance":
-                v_test = 0
-
-            elif request.form["Options"] == "Custom Account Balance":
-                v_test = 2
-
-            if config.TEST != v_test:
-                os.environ["TEST"] = str(v_test)
-
-            if v_test == 2:
-                if config.TEST_ACCOUNT != request.form["Account Balance"]:
-                    os.environ["TEST_ACCOUNT"] = request.form["Account Balance"]
-            
-        return render_template("config.html", a_risk=config.RISK, test=str(config.TEST))
-        
-    return render_template("config.html", a_risk=config.RISK, test=str(config.TEST))
+@app.route("/")
+def hello_world():
+    return "<p>The BOT is deployed!</p>"
 
 
 @app.route('/webhook', methods=['POST'])
@@ -716,11 +631,10 @@ def webhook():
                      body = body + "Stop Loss Order - Success!" + "\n"
                      subject = "Success!"
 
-    # create_email(data, body, subject)
+    create_email(data, body, subject)
 
     #END of Jim
 
-    return jsonify(
-        {
-            "data" : body
-        })
+    return {
+        "Message" : "Success"
+    }
