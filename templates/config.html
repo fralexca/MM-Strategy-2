@@ -1,0 +1,56 @@
+<!--index.html-->
+<!DOCTYPE html>
+<html lang = "en">
+<head>        
+    <meta charset="UTF-8">
+    <meta name="viewport", content="width=device-width", initial-scale = 1.0>
+    <title> Pro Traders Configuration </title>
+</head>
+
+<body>
+    <h1> Configuration </h1>
+    
+    
+
+
+
+    <form class="form" method="POST">
+    <div>
+        <label for="risk">Risk %</label>
+        <input type="text" id="risk" name="risk" value="{{a_risk}}">
+
+        
+    </div>
+
+    
+   
+    <div>
+        <input type="radio" id="test" name="Options" value="Test Mode" {% if test==1 %} checked {% endif %}>
+        <label for="test">Test Mode</label>
+    </div>
+
+    <div>
+        <input type="radio" id="dynamic" name="Options" value="Dynamic Account Balance" {% if test==0 %} checked {% endif %}>
+        <label for="dynamic">Dynamic Account Balance</label>
+    </div>
+
+    <div>
+        <input type="radio" id="custom" name="Options" value="Custon Account Balance" {% if test==2 %} checked {% endif %}>
+        <label for="custom">Custon Account Balance</label>
+
+        <label for="account">:</label>
+        <input type="number" id="account" name="Account Balance" placeholder="Account Balance in USDT">
+    </div>
+
+    <div>
+        <input type="submit" class="submit" value="Save Changes">
+    </div>
+
+    </form>
+
+    
+
+
+
+</body>
+</html>

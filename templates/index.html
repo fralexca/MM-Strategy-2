@@ -1,0 +1,79 @@
+<!--index.html-->
+<!DOCTYPE html>
+<html lang = "en">
+<head>        
+    <meta charset="UTF-8">
+    <meta name="viewport", content="width=device-width", initial-scale = 1.0>
+    <title> Pro Traders </title>
+</head>
+
+<body>
+    <h1>Pro Traders-Money Maker</h1>
+    <h2>Manual Trading</h2>
+    <h3>Select Trading Option:</h3>
+
+    <!-- <form class="form" method="POST"> -->
+
+    <form class="form" method="POST">
+    <div>
+        <input type="radio" id="test" name="Options" value="Test Mode">
+        <label for="test">Test Mode</label>
+    </div>
+
+    <div>
+        <input type="radio" id="dynamic" name="Options" value="Dynamic Account Balance">
+        <label for="dynamic">Dynamic Account Balance</label>
+    </div>
+
+    <div>
+        <input type="radio" id="custom" name="Options" value="Custon Account Balance">
+        <label for="custom">Custon Account Balance</label>
+
+        <label for="account">:</label>
+        <input type="number" id="account" name="Account Balance" placeholder="Account Balance in USDT">
+    </div>
+
+    <div>
+        <input type="radio" id="set" name="Options" value="Set Stop Loss Order">
+        <label for="set">Set Stop Loss Order</label>
+    </div>
+
+    <h3>Execute Order:</h3>
+
+    <div>
+        <label for="passphrase">PASSPHRASE</label>
+        <input type="text" id="passphrase" name="passphrase">
+    </div>
+
+    <div>
+        <label for="message">TRADE</label>
+        <input type="text" id="message" name="message">
+    </div>
+
+    <div>
+        <label for="coinpair">COINPAIR</label>
+        <input type="text" id="coinpair" name="coinpair">
+    </div>
+
+    <div>
+        <label for="entryprice">ENTRY PRICE</label>
+        <input type="text" id="entryprice" name="entryprice">
+    </div>
+
+    <div>
+        <label for="stopprice">STOP PRICE</label>
+        <input type="text" id="stopprice" name="stopprice">
+    </div>
+
+    <div>
+        <input type="submit" class="submit">
+    </div>
+
+    </form>
+
+    <p>{{body}}</p>
+
+
+
+</body>
+</html>
