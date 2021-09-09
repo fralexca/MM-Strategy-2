@@ -4,7 +4,7 @@ from flask import Flask, request, render_template, redirect, url_for, jsonify
 from flask_mail import Mail, Message
 from binance.client import Client
 from binance.enums import *
-from pymongo import MongoClient
+#from pymongo import MongoClient
 
 
 app = Flask(__name__)
