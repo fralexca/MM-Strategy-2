@@ -528,7 +528,8 @@ def configuration():
     
     if request.method == "GET":
 
-        print (config.RISK)
+        print (f"Risk is {config.RISK}")
+        print (f"Trading Mode is {config.TEST}")
 
         return render_template("config.html", a_risk=config.RISK, test=config.TEST)
     
