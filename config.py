@@ -10,9 +10,9 @@ MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
 
 RISK = 0.01
 
-#TEST = 0  #Live Trading
+TEST = 0  #Live Trading
 
-TEST = 1  #Test Orders Only
+#TEST = 1  #Test Orders Only
 
 #TEST = 2 #ACCOUNT Balance will have a fixed Amount. 
 
