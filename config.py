@@ -8,7 +8,7 @@ API_SECRET = os.environ.get("API_SECRET")
 MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
 MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
 
-RISK = 0.005
+RISK = 0.05
 
 TEST = 0  #Live Trading
 
